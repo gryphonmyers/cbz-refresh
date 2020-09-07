@@ -27,7 +27,7 @@ async function rebuildCbzs(inputPath) {
             zip.extractAllTo(extractDir, true);
             
             try {
-                await fs.rmdir(path.join(extractDir, '__MACOSX'))
+                await fs.rmdir(path.join(extractDir, '__MACOSX'), {recursive: true})
             } catch (err) {}
 
             zip = new AdmZip();
